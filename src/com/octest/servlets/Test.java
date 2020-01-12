@@ -8,6 +8,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.octest.forms.ConnectionForm;
+
 /**
  * Servlet implementation class Test
  */
@@ -27,9 +29,12 @@ public class Test extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String nom = request.getParameter("nom");
-
-		request.setAttribute("nom", nom);
+		
+		ConnectionForm form = new ConnectionForm();
+		
+		form.verifierIdentifiant(request);
+		
+		request.setAttribute("form", form);
 
 		this.getServletContext().getRequestDispatcher("/WEB-INF/bonjour.jsp").forward(request, response);
 	}

@@ -6,17 +6,11 @@
     </head>
     <body>
 
-        <c:if test="${ !empty form.resultat }"><p><c:out value="${ form.resultat }" /></p></c:if>
+        <c:if test="${ !empty nom }"><p><c:out value="Bonjour, vous vous appelez ${ nom }" /></p></c:if>
         
         <form method="post" action="bonjour">
-        	<p>
-            	<label for="login">Login : </label>
-            	<input type="text" name="login" id="login" />
-            </p>
-            <p>
-            	<label for="pass">Mot de passe : </label>
-            	<input type="password" name="pass" id="pass" />
-            </p>
+            <label for="nom">Nom : </label>
+            <input type="text" name="nom" id="nom" />
             
             <input type="submit" />
         </form>

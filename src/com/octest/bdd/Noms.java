@@ -8,12 +8,14 @@ import java.sql.Statement;
 import java.sql.PreparedStatement;
 import java.util.ArrayList;
 import java.util.List;
+
+import com.octest.beans.BeanException;
 import com.octest.beans.Utilisateur;
 
 public class Noms {
 	private Connection connexion;
 
-	public List<Utilisateur> recupererUtilisateurs() {
+	public List<Utilisateur> recupererUtilisateurs() throws BeanException {
 		List<Utilisateur> utilisateurs = new ArrayList<Utilisateur>();
 		Statement statement = null;
 		ResultSet resultat = null;
@@ -62,7 +64,7 @@ public class Noms {
 		}
 
 		try {
-			connexion = DriverManager.getConnection("jdbc:postgresql://127.0.0.1:5432/javaee", "postgres", "Px!Au6365");
+			connexion = DriverManager.getConnection("jdbc:postgresql://127.0.0.1:5432/javaee", "postgres", "postgres");
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

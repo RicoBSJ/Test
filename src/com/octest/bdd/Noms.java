@@ -57,12 +57,12 @@ public class Noms {
 	private void loadDatabase() {
 		// Chargement du driver
 		try {
-			Class.forName("com.mysql.jdbc.Driver");
+			Class.forName("org.postgresql.Driver");
 		} catch (ClassNotFoundException e) {
 		}
 
 		try {
-			connexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/javaee", "root", "");
+			connexion = DriverManager.getConnection("jdbc:postgresql://127.0.0.1:5432/javaee", "postgres", "Px!Au6365");
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
